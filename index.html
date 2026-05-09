@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sagena Dev — Full Stack Developer portfolio showcasing projects, skills, and certifications.">
+    <title>RizqonSagena||Web Porto</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Devicons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
+    <!-- Site styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Main script (deferred — non-blocking) -->
+    <script defer src="assets/js/main.js"></script>
+  </head>
+  <body>
+
+    <!-- Skip to main content (keyboard accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- ================================================================
+         NAVIGATION BAR
+         ================================================================ -->
+    <header id="navbar">
+      <nav class="container">
+        <div class="nav-logo">Sagena Web</div>
+
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <a href="#contact" class="btn btn-primary nav-cta">Let's Talk</a>
+
+        <button
+          class="hamburger"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </header>
+
+    <!-- ================================================================
+         MAIN CONTENT
+         ================================================================ -->
+    <main id="main-content">
+
+    <!-- ================================================================
+         HERO SECTION
+         ================================================================ -->
+    <section id="home" class="hero">
+      <div class="container hero-container">
+
+        <!-- Left: text content -->
+        <div class="hero-content">
+          <span class="hero-subtitle">Hello, I'm</span>
+          <h1 class="hero-title">Muhammad Rizqon Sagena</h1>
+          <p class="hero-tagline">Full Stack Developer | Problem Solver | Tech Enthusiast</p>
+          <p class="hero-bio">
+            I'm a passionate full stack developer who loves building clean, performant web
+            applications. From pixel-perfect UIs to robust back-end APIs, I enjoy turning
+            ideas into real products that make a difference.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="#portfolio" class="btn btn-primary">
+              <i class="fas fa-briefcase" aria-hidden="true"></i>
+              View My Work
+            </a>
+            <a href="assets/cv.pdf" download class="btn btn-outline">
+              <i class="fas fa-download" aria-hidden="true"></i>
+              Download CV
+            </a>
+          </div>
+
+          <div class="hero-socials">
+            <a
+              href="https://github.com/RizqonSagena"
+              target="_blank"
+              rel="noopener"
+              aria-label="GitHub profile"
+              class="social-link"
+            >
+              <i class="fab fa-github" aria-hidden="true"></i>
+            </a>
+            <a
+              href="https://linkedin.com/in/muhammadrizqonsagena"
+              target="_blank"
+              rel="noopener"
+              aria-label="LinkedIn profile"
+              class="social-link"
+            >
+              <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+            </a>
+            <a
+              href="https://instagram.com/sagena.rz"
+              target="_blank"
+              rel="noopener"
+              aria-label="instagram profile"
+              class="social-link"
+            >
+              <i class="fab fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a
+              href="mailto:msagena262@gmail.com"
+              target="_blank"
+              rel="noopener"
+              aria-label="Send email to sagena Dev"
+              class="social-link"
+            >
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: profile photo + floating icons -->
+        <div class="hero-visual">
+          <div class="profile-ring">
+            <img
+              src="assets/images/certs/profile.jpg"
+              alt="Sagena Dev profile photo"
+              class="profile-photo"
+            >
+          </div>
+
+          <!-- Decorative floating tech icons — hidden from assistive tech -->
+          <div class="floating-icons" aria-hidden="true">
+            <i
+              class="devicon-react-original colored floating-icon"
+              style="--delay: 0s; --x: -80px; --y: -60px"
+            ></i>
+            <i
+              class="devicon-nodejs-plain colored floating-icon"
+              style="--delay: 1.5s; --x: 90px; --y: -40px"
+            ></i>
+            <i
+              class="fas fa-code floating-icon"
+              style="--delay: 0.8s; --x: -60px; --y: 80px"
+            ></i>
+          </div>
+        </div>
+
+      </div><!-- /.hero-container -->
+
+      <!-- Scroll-down indicator -->
+      <a href="#about" class="scroll-indicator" aria-label="Scroll to About section">
+        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+      </a>
+    </section>
+
+
+    <!-- ================================================================
+         ABOUT SECTION
+         ================================================================ -->
+    <section id="about" class="about section-padding" data-reveal>
+      <div class="container about-container">
+
+        <!-- Left column: photo + stats overlay -->
+        <div class="about-visual">
+          <div class="about-img-wrapper">
+            <img
+              src="assets/images/certs/about.jpg"
+              alt="Sagena Dev at a laptop"
+              class="about-photo"
+            >
+          </div>
+
+          <!-- Stats overlay cards -->
+          <div class="stats-overlay">
+            <div class="stat-card card">
+              <span class="stat-number" data-target="2">0</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat-card card">
+              <span class="stat-number" data-target="5">0</span>
+              <span class="stat-label">Projects Completed</span>
+            </div>
+            <div class="stat-card card">
+              <span class="stat-number" data-target="5">0</span>
+              <span class="stat-label">Happy Clients</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right column: text content -->
+        <div class="about-content" data-reveal>
+          <h2 class="section-heading">Get to know me</h2>
+
+          <p class="about-bio">
+            As a Software Engineer, I believe that great digital solutions
+             are born from a balance between robust back-end systems and intuitive
+              front-end interfaces. With a background in computer engineering, 
+              I dedicate myself to building applications that are not only logically stable
+               and efficient but also provide a smooth and engaging user experience.
+                I enjoy bridging technical needs and user experience to create products
+                 that have a real impact.
+                 Building technology from logic to interface is my core expertise.
+                  As a Full-Stack Developer, I am committed to writing clean, efficient,
+                   and structured code. My focus is on turning complex ideas into functional, 
+                   user-friendly applications that provide added value to clients.
+          </p>
+            
+        <!-- Strengths -->
+          <div class="about-subsection">
+            <h3 class="about-subsection-heading">
+              <i class="fas fa-bolt" aria-hidden="true"></i>
+              Strengths
+            </h3>
+            <ul class="about-list">
+              <li>
+                <i class="fas fa-circle-dot" aria-hidden="true"></i>
+                Problem-solving &amp; algorithmic thinking
+              </li>
+              <li>
+                <i class="fas fa-circle-dot" aria-hidden="true"></i>
+                Clean, maintainable code &amp; best practices
+              </li>
+              <li>
+                <i class="fas fa-circle-dot" aria-hidden="true"></i>
+                Collaborative team player &amp; clear communicator
+              </li>
+            </ul>
+          </div>
+
+          <!-- Experience -->
+          <div class="about-subsection">
+            <h3 class="about-subsection-heading">
+              <i class="fas fa-briefcase" aria-hidden="true"></i>
+              Experience
+            </h3>
+            <ul class="about-list">
+              <li>
+                <i class="fas fa-circle-dot" aria-hidden="true"></i>
+                Full Stack Developer — Freelance (2024 – Present)
+              </li>
+              <li>
+                <i class="fas fa-circle-dot" aria-hidden="true"></i>
+               software engineering PONPES ONLINE (2024 – Present)
+              </li>
+              <li>
+                <i class="fas fa-circle-dot" aria-hidden="true"></i>
+                Open Source Contributor — React &amp; Node.js ecosystem
+              </li>
+            </ul>
+          </div>
+        </div><!-- /.about-content -->
+
+      </div><!-- /.about-container -->
+    </section>
+
+
+    <!-- ================================================================
+         SKILLS SECTION
+         ================================================================ -->
+    <section id="skills" class="skills section-padding" data-reveal>
+      <div class="container">
+        <h2 class="section-heading">My Technical Skills</h2>
+        <div id="skills-grid" class="skills-grid"></div>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         CERTIFICATIONS SECTION
+         ================================================================ -->
+    <section id="certifications" class="certifications section-padding" data-reveal>
+      <div class="container">
+        <h2 class="section-heading">My Certifications</h2>
+        <div id="certs-grid" class="certs-grid"></div>
+        <div class="section-footer">
+          <a
+            href="#certifications"
+            class="btn btn-outline view-all-link"
+            aria-label="View all certifications"
+          >
+            View All
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         PORTFOLIO SECTION
+         ================================================================ -->
+    <section id="portfolio" class="portfolio section-padding" data-reveal>
+      <div class="container">
+        <h2 class="section-heading">My Recent Work</h2>
+        <div id="projects-grid" class="projects-grid"></div>
+        <div class="section-footer">
+          <a href="#" class="btn btn-outline">View All Projects</a>
+        </div>
+      </div>
+    </section>
+
+
+    </main><!-- /#main-content -->
+
+    <!-- ================================================================
+         FOOTER / CONTACT SECTION
+         ================================================================ -->
+    <footer id="contact">
+      <div class="container">
+        <div class="footer-grid">
+
+          <!-- Column 1: Brand -->
+          <div class="footer-brand">
+            <div class="nav-logo">Sagena Dev</div>
+            <p class="footer-tagline">
+              Full Stack Developer crafting clean, performant web experiences
+              from idea to deployment.
+            </p>
+            <div class="footer-socials">
+              <a
+               href="https://github.com/RizqonSagena"
+              target="_blank"
+              rel="noopener"
+              aria-label="GitHub profile"
+              class="social-link"
+              >
+                <i class="fab fa-github" aria-hidden="true"></i>
+              </a>
+               <a
+              href="https://linkedin.com/in/muhammadrizqonsagena"
+              target="_blank"
+              rel="noopener"
+              aria-label="LinkedIn profile"
+              class="social-link"
+            >
+              <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+            </a>
+            <a
+              href="https://instagram.com/sagena.rz"
+              target="_blank"
+              rel="noopener"
+              aria-label="instagram profile"
+              class="social-link"
+            >
+              <i class="fab fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a
+              href="mailto:msagena262@gmail.com"
+              target="_blank"
+              rel="noopener"
+              aria-label="Send email to sagena Dev"
+              class="social-link"
+            >
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+            </a>
+            </div>
+          </div>
+
+          <!-- Column 2: Quick Links -->
+          <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#certifications">Certifications</a></li>
+              <li><a href="#portfolio">Portfolio</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Contact Info -->
+          <div class="footer-contact">
+            <h4>Contact Info</h4>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+              <span>Indonesia, Tanjung Pinang</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <span>msagena262@gamil.com</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone" aria-hidden="true"></i>
+              <span>+62 (896) 0143-7260 </span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-globe" aria-hidden="true"></i>
+              <span>SagenaWeb.com</span>
+            </div>
+          </div>
+
+          <!-- Column 4: Let's Connect -->
+          <div class="footer-newsletter">
+            <h4>Let's Connect</h4>
+            <p>Drop your email and I'll get back to you as soon as possible.</p>
+            <form id="contact-form" novalidate>
+              <div class="email-form">
+                <input
+                  type="email"
+                  id="contact-email"
+                  class="contact-email"
+                  placeholder="Your email address"
+                  aria-label="Your email address"
+                  autocomplete="email"
+                >
+                <button type="submit" aria-label="Send email">
+                  <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                </button>
+              </div>
+              <p id="form-error" role="alert" aria-live="polite"></p>
+              <p id="form-success"></p>
+            </form>
+          </div>
+
+        </div><!-- /.footer-grid -->
+      </div><!-- /.container -->
+
+      <!-- Copyright bar -->
+      <div class="footer-bottom">
+        <div class="container">
+          <p>&copy; <span id="footer-year"></span> Sagena Web. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
