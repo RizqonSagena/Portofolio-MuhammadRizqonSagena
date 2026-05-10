@@ -283,7 +283,7 @@ function renderSkills(skills) {
   grid.innerHTML = skills
     .map(
       (skill) =>
-        `<div class="skill-card">` +
+        `<div class="card skill-card">` +
         `<i class="${skill.icon}" aria-hidden="true"></i>` +
         `<span>${skill.label}</span>` +
         `</div>`
@@ -369,7 +369,14 @@ function renderProjects(projects) {
   if (!grid) return;
   grid.innerHTML = projects.map(p => `
     <article class="card project-card">
-      <img src="${p.image}" alt="${p.imageAlt}" loading="lazy">
+      <div class="project-image-container">
+        <img src="${p.image}" alt="${p.imageAlt}" loading="lazy">
+        <div class="project-overlay">
+          <div class="overlay-content">
+             <a href="${p.liveUrl}" target="_blank" class="btn btn-primary btn-sm">View Demo</a>
+          </div>
+        </div>
+      </div>
       <div class="project-card-body">
         <h3>${p.name}</h3>
         <p>${p.description}</p>
@@ -377,11 +384,8 @@ function renderProjects(projects) {
           ${p.tags.map(t => `<span class="badge">${t}</span>`).join('')}
         </div>
         <div class="project-links">
-          <a href="${p.liveUrl}" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-external-link-alt" aria-hidden="true"></i> Live Demo
-          </a>
-          <a href="${p.repoUrl}" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-github" aria-hidden="true"></i> Source Code
+          <a href="${p.repoUrl}" target="_blank" rel="noopener noreferrer" class="repo-link">
+            <i class="fab fa-github" aria-hidden="true"></i> GitHub
           </a>
         </div>
       </div>
@@ -502,6 +506,90 @@ function initContactForm() {
 }
 
 /* ==========================================================================
+   PREMIUM EFFECTS — initPremiumEffects()
+   ========================================================================== */
+
+function initPremiumEffects() {
+  const cursor = document.getElementById('cursor');
+  const follower = document.getElementById('cursor-follower');
+  const cards = document.querySelectorAll('.card');
+  const typingEl = document.getElementById('typing-text');
+  const heroIcons = document.querySelectorAll('.floating-icon');
+
+  // ── Custom Cursor ──────────────────────────────────────────────────────
+  document.addEventListener('mousemove', (e) => {
+    const { clientX: x, clientY: y } = e;
+    if (cursor) cursor.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+    if (follower) {
+      setTimeout(() => {
+        follower.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+      }, 50);
+    }
+  });
+
+  // ── Card Spotlight Effect ──────────────────────────────────────────────
+  document.addEventListener('mousemove', (e) => {
+    // Only update cards currently in viewport for performance
+    const visibleCards = Array.from(cards).filter(card => {
+      const rect = card.getBoundingClientRect();
+      return rect.top < window.innerHeight && rect.bottom > 0;
+    });
+
+    visibleCards.forEach(card => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    });
+  });
+
+  // ── Hero Parallax ──────────────────────────────────────────────────────
+  document.addEventListener('mousemove', (e) => {
+    const { clientX: x, clientY: y } = e;
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
+    const deltaX = (x - centerX) / centerX;
+    const deltaY = (y - centerY) / centerY;
+
+    heroIcons.forEach(icon => {
+      const speed = 20;
+      icon.style.transform = `translate(calc(-50% + var(--x) + ${deltaX * speed}px), calc(-50% + var(--y) + ${deltaY * speed}px))`;
+    });
+  });
+
+  // ── Magnetic Buttons ──────────────────────────────────────────────────
+  const magneticBtns = document.querySelectorAll('.btn');
+  magneticBtns.forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+    });
+
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = `translate(0px, 0px)`;
+    });
+  });
+
+  // ── Typing Effect ──────────────────────────────────────────────────────
+  if (typingEl) {
+    const text = typingEl.textContent;
+    typingEl.textContent = '';
+    let i = 0;
+    const type = () => {
+      if (i < text.length) {
+        typingEl.textContent += text.charAt(i);
+        i++;
+        setTimeout(type, 50);
+      }
+    };
+    setTimeout(type, 1000);
+  }
+}
+
+/* ==========================================================================
    ENTRY POINT
    ========================================================================== */
 
@@ -527,7 +615,26 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialise contact form validation
   initContactForm();
 
+  // Initialise premium interactivity
+  initPremiumEffects();
+
   // Set footer copyright year dynamically
   const yearEl = document.getElementById('footer-year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // ── Back to Top ────────────────────────────────────────────────────────
+  const backToTopBtn = document.getElementById('back-to-top');
+  if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        backToTopBtn.classList.add('show');
+      } else {
+        backToTopBtn.classList.remove('show');
+      }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 });
